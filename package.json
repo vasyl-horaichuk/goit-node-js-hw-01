@@ -1,0 +1,24 @@
+{
+  "name": "goit-node-js-hw-01",
+  "version": "1.0.0",
+  "description": "Основи Node.js. Cворення консольних додатків",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js",
+    "start:watch": "node --watch index.js" 
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vasyl-horaichuk/goit-node-js-hw-01.git"
+  },
+  "author": "Vasyl <vg.createam@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vasyl-horaichuk/goit-node-js-hw-01/issues"
+  },
+  "homepage": "https://github.com/vasyl-horaichuk/goit-node-js-hw-01#readme",
+  "devDependencies": {
+    "nodemon": "^2.0.22"
+  }
+}
