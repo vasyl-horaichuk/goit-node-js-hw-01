@@ -1,3 +1,5 @@
-const contactsPatch = require('./contacts');
+const contacts = require('./contacts');
 
-console.log(contactsPatch);
+// contacts.listContacts();
+contacts.getContactById();
+// 'qdggE76Jtbfd9eWJHrssH';
