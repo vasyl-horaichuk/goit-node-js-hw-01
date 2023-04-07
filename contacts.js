@@ -4,17 +4,20 @@ const path = require('path');
 const contactsPath = path.join(__dirname, 'db', 'contacts.json');
 
 // Читаємо файл
-const listContacts = async () => {
-  const data = await fs.readFile(contactsPath, 'utf-8');
-  return JSON.parse(data);
-};
+function listContacts() {
+  const data = fs
+    .readFile(contactsPath, 'utf-8')
+    .then(date => consol.log(date))
+    .catch(err => console.error(err));
+  return data;
+}
 
 // Отримати конкретний контакт
-const getContactById = async contactId => {
-  const list = await listContacts();
-  const result = list.find(item => item.id === contactId);
+function getContactById(contactId) {
+  const list = listContacts();
+  const result = list.find(contact => contact.id === contactId);
   return result || null;
-};
+}
 
 function removeContact(contactId) {
   // ...твій код
