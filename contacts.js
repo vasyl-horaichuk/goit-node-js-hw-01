@@ -20,6 +20,7 @@ function removeContact(contactId) {
   // ...твій код
 }
 
+// Добавляємо файл
 const addContact = async (name, email, phone) => {
   const contacts = await listContacts();
   const newContact = {
