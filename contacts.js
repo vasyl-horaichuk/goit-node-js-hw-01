@@ -29,5 +29,7 @@ const addContact = async (name, email, phone) => {
     phone,
   };
   contacts.push(newContact);
+  await fs.writeFile(contactsPath, JSON.stringify(contacts));
+  return newContact;
 };
 module.exports = { listContacts, getContactById, removeContact, addContact };
