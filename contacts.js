@@ -20,7 +20,14 @@ function removeContact(contactId) {
   // ...твій код
 }
 
-function addContact(name, email, phone) {
-  // ...твій код
-}
+const addContact = async (name, email, phone) => {
+  const contacts = await listContacts();
+  const newContact = {
+    id: nanoid(8),
+    name,
+    email,
+    phone,
+  };
+  contacts.push(newContact);
+};
 module.exports = { listContacts, getContactById, removeContact, addContact };
