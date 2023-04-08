@@ -15,6 +15,13 @@ const invokeAction = async ({ action, id, name, email, phone }) => {
       const newContacts = await contacts.addContact(name, email, phone);
       return console.log(newContacts);
 
+    case 'update':
+      const updateContacts = await contacts.updateContactById(id, {
+        name,
+        email,
+        phone,
+      });
+
     case 'remove':
     // ... id
     //   break;
@@ -31,5 +38,12 @@ invokeAction({
   name: 'Vasyl Horaichuk',
   email: 'vg.createam@gmail.com',
   phone: '+38(063)301-71-65',
+});
+invokeAction({
+  action: 'update',
+  id: 'ij3-rhur',
+  name: 'Volodumer Horaichuk',
+  email: 'tets@gmail.com',
+  phone: '+38(093)111-11-11',
 });
 // invokeAction(argv);

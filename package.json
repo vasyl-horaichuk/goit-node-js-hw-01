@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node index.js",
     "dev": "nodemon index.js",
-    "start:watch": "node --watch index.js" 
+    "start:watch": "node --watch index.js"
   },
   "repository": {
     "type": "git",
@@ -20,5 +20,8 @@
   "homepage": "https://github.com/vasyl-horaichuk/goit-node-js-hw-01#readme",
   "devDependencies": {
     "nodemon": "^2.0.22"
+  },
+  "dependencies": {
+    "nanoid": "^3.0.0"
   }
 }
