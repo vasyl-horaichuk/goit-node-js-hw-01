@@ -21,6 +21,7 @@ const invokeAction = async ({ action, id, name, email, phone }) => {
         email,
         phone,
       });
+      return console.log(updateContacts);
 
     case 'remove':
     // ... id
@@ -31,14 +32,14 @@ const invokeAction = async ({ action, id, name, email, phone }) => {
   }
 };
 
-invokeAction({ action: 'read' });
-invokeAction({ action: 'get', id: 'qdggE76Jtbfd9eWJHrssH' });
-invokeAction({
-  action: 'add',
-  name: 'Vasyl Horaichuk',
-  email: 'vg.createam@gmail.com',
-  phone: '+38(063)301-71-65',
-});
+// invokeAction({ action: 'read' });
+// invokeAction({ action: 'get', id: 'qdggE76Jtbfd9eWJHrssH' });
+// invokeAction({
+//   action: 'add',
+//   name: 'Vasyl Horaichuk',
+//   email: 'vg.createam@gmail.com',
+//   phone: '+38(063)301-71-65',
+// });
 invokeAction({
   action: 'update',
   id: 'ij3-rhur',
