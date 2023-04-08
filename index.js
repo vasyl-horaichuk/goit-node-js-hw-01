@@ -36,11 +36,15 @@ const invokeAction = async ({ action, id, name, email, phone }) => {
 
 // Commander
 program
-  .option('--action, <type>')
-  .option('--id, <type>')
-  .option('--name, <type>')
-  .option('--email, <type>')
-  .option('--phone, <type>');
+  .option('-a, --action, <type>')
+  .option('-i, --id, <type>')
+  .option('-n, --name, <type>')
+  .option('-e, --email, <type>')
+  .option('-p, --phone, <type>');
+
+program.parse();
+const options = program.opts();
+invokeAction(options);
 
 // Yargs
 // const arr = hideBin(process.argv);
