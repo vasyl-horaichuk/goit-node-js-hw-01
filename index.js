@@ -1,5 +1,5 @@
 const contacts = require('./contacts');
-// const argv = require('yargs').argv;
+const { hideBin } = require('yargs/helpers');
 
 const invokeAction = async ({ action, id, name, email, phone }) => {
   switch (action) {
@@ -28,27 +28,23 @@ const invokeAction = async ({ action, id, name, email, phone }) => {
       return console.log(removeContacts);
 
     default:
-      console.warn('\x1B[31m Unknown action type!');
+      return console.log('Unknown action type!');
   }
 };
 
-// invokeAction({ action: 'read' });
-// invokeAction({ action: 'get', id: 'qdggE76Jtbfd9eWJHrssH' });
-// invokeAction({
-//   action: 'add',
-//   name: 'Vasyl Horaichuk',
-//   email: 'vg.createam@gmail.com',
-//   phone: '+38(063)301-71-65',
-// });
-// invokeAction({
-//   action: 'update',
-//   id: 'ij3-rhur',
-//   name: 'Volodumer Horaichuk',
-//   email: 'tets@gmail.com',
-//   phone: '+38(093)111-11-11',
-// });
-invokeAction({
-  action: 'remove',
-  id: 'ij3-rhur',
-});
-// invokeAction(argv);
+// const actionIndex = process.argv.indexOf('--action');
+// if (actionIndex !== -1) {
+//   const action = process.argv[actionIndex + 1];
+//   const id = process.argv[actionIndex + 2];
+//   const name = process.argv[actionIndex + 3];
+//   const email = process.argv[actionIndex + 4];
+//   const phone = process.argv[actionIndex + 5];
+//   invokeAction({ action, id, name, email, phone });
+// }
+
+// const actionIndex = process.argv.indexOf('--action');
+// console.log(actionIndex);
+console.log(process.argv);
+console.log(process.argv.index('--action'));
+console.log(process.argv.index('index'));
+console.log(process.argv.index('get'));
