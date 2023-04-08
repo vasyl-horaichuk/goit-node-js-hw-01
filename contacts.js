@@ -44,7 +44,7 @@ const updateContactById = async (id, data) => {
   return contacts[index];
 };
 
-// Добавляємо rконтакт
+// Добавляємо контакт
 const addContact = async (name, email, phone) => {
   const contacts = await listContacts();
   const newContact = {
