@@ -32,14 +32,5 @@ const invokeAction = async ({ action, id, name, email, phone }) => {
   }
 };
 
-const arr = hideBin(process.arg);
+const arr = hideBin(process.argv);
 console.log(arr);
-// const actionIndex = process.argv.indexOf('--action');
-// if (actionIndex !== -1) {
-//   const action = process.argv[actionIndex + 1];
-//   const id = process.argv[actionIndex + 2];
-//   const name = process.argv[actionIndex + 3];
-//   const email = process.argv[actionIndex + 4];
-//   const phone = process.argv[actionIndex + 5];
-//   invokeAction({ action, id, name, email, phone });
-// }
