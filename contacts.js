@@ -18,14 +18,21 @@ const getContactById = async id => {
 };
 
 // Видаляємо контакт
-function removeContact(contactId) {
-  // ...твій код
-}
+const removeContact = async contactId => {
+  const contacts = await listContacts();
+};
 
 // Оновлюємо контакт
-function updateContactById(contactId) {
-  // ...твій код
-}
+const updateContactById = async (id, data) => {
+  const contacts = await listContacts();
+  const index = contacts.findIndex(contact => contact.id === id);
+  if (index !== -1) {
+    return null;
+  }
+  contacts[index] = { id, ...data };
+  await fs.writeFile(contactsPath, JSON.stringify(contacts, null, 2));
+  return contacts[index];
+};
 
 // Добавляємо файл
 const addContact = async (name, email, phone) => {
