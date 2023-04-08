@@ -18,8 +18,15 @@ const getContactById = async id => {
 };
 
 // Видаляємо контакт
-const removeContact = async contactId => {
+const removeContactById = async id => {
   const contacts = await listContacts();
+  const index = contacts.findIndex(contact => contact.id === id);
+  if (index == -1) {
+    return null;
+  }
+  const [result] = contacts.splice(index, 1);
+  await fs.writeFile(contactsPath, JSON.stringify(contacts, null, 2));
+  return result;
 };
 
 // Оновлюємо контакт
@@ -51,6 +58,6 @@ module.exports = {
   listContacts,
   getContactById,
   updateContactById,
-  removeContact,
+  removeContactById,
   addContact,
 };

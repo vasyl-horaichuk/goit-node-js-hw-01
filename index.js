@@ -24,8 +24,8 @@ const invokeAction = async ({ action, id, name, email, phone }) => {
       return console.log(updateContacts);
 
     case 'remove':
-    // ... id
-    //   break;
+      const removeContacts = await contacts.removeContactById(id);
+      return console.log(removeContacts);
 
     default:
       console.warn('\x1B[31m Unknown action type!');
@@ -40,11 +40,15 @@ const invokeAction = async ({ action, id, name, email, phone }) => {
 //   email: 'vg.createam@gmail.com',
 //   phone: '+38(063)301-71-65',
 // });
+// invokeAction({
+//   action: 'update',
+//   id: 'ij3-rhur',
+//   name: 'Volodumer Horaichuk',
+//   email: 'tets@gmail.com',
+//   phone: '+38(093)111-11-11',
+// });
 invokeAction({
-  action: 'update',
+  action: 'remove',
   id: 'ij3-rhur',
-  name: 'Volodumer Horaichuk',
-  email: 'tets@gmail.com',
-  phone: '+38(093)111-11-11',
 });
 // invokeAction(argv);
