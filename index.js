@@ -1,5 +1,6 @@
-const yargs = require('yargs');
-const { hideBin } = require('yargs/helpers');
+// const yargs = require('yargs');
+// const { hideBin } = require('yargs/helpers');
+const { program } = require('commander');
 const contacts = require('./contacts');
 
 const invokeAction = async ({ action, id, name, email, phone }) => {
@@ -33,6 +34,15 @@ const invokeAction = async ({ action, id, name, email, phone }) => {
   }
 };
 
-const arr = hideBin(process.argv);
-const { argv } = yargs(arr);
-invokeAction(argv);
+// Commander
+program
+  .option('--action, <type>')
+  .option('--id, <type>')
+  .option('--name, <type>')
+  .option('--email, <type>')
+  .option('--phone, <type>');
+
+// Yargs
+// const arr = hideBin(process.argv);
+// const { argv } = yargs(arr);
+// invokeAction(argv);
