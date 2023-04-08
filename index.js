@@ -32,6 +32,8 @@ const invokeAction = async ({ action, id, name, email, phone }) => {
   }
 };
 
+const arr = hideBin(process.arg);
+console.log(arr);
 // const actionIndex = process.argv.indexOf('--action');
 // if (actionIndex !== -1) {
 //   const action = process.argv[actionIndex + 1];
@@ -41,10 +43,3 @@ const invokeAction = async ({ action, id, name, email, phone }) => {
 //   const phone = process.argv[actionIndex + 5];
 //   invokeAction({ action, id, name, email, phone });
 // }
-
-// const actionIndex = process.argv.indexOf('--action');
-// console.log(actionIndex);
-console.log(process.argv);
-console.log(process.argv.index('--action'));
-console.log(process.argv.index('index'));
-console.log(process.argv.index('get'));
